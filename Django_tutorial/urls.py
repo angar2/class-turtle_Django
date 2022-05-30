@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from articles import views # __init_.py 파일의 영향으로 'articles' 폴더 자체를 모듈로 인식함
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', views.index),
+    path('dinner', views.dinner),
 ]
