@@ -1,1 +1,7 @@
 <h1>{{ name }}의 오늘 저녁은 {{ pick }}이다</h1>
+<h3>메뉴 리스트</h3>
+<ul>
+    {% for menu in menus %}
+    <li>{{ menu }}</li>
+    {% endfor %}
+</ul>
