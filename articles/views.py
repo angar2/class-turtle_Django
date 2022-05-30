@@ -6,7 +6,7 @@ def index(request):
     return render(request, 'index.html')
 
 def dinner(request, name):
-    menus = ['족발', '햄버거', '피자', '치킨']
+    menus = [{"name":"족발", "price":30000}, {"name":"햄버거", "price":10000}, {"name":"치킨", "price":20000}, {"name":"피자", "price":20000},]
     pick = random.choice(menus) # random 모듈 사용
     context = {
         'pick': pick,
