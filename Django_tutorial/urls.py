@@ -14,13 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from articles import views # __init_.py 파일의 영향으로 'articles' 폴더 자체를 모듈로 인식함
+from django.urls import path, include
+# from articles import views # __init_.py 파일의 영향으로 'articles' 폴더 자체를 모듈로 인식함
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index),
-    path('dinner/<str:name>', views.dinner), # 변수형 URL: 주소 자체를 변수처럼 사용해서 동적으로 주소를 만드는 방법 (ex. 유저 페이지)
-    path('review/', views.review),
-    path('create_review/', views.create_review),
+    path('articles/', include('articles.urls')),
+    # path('foods/', include('foods.urls')),
 ]
