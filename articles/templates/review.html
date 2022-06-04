@@ -1,4 +1,10 @@
-<form action="/create_review/" method="POST">
+<!-- 
+% url 'app_name:name' %: 주소가 아닌 해당 주소의 name으로 API 요청을 함
+                        주소가 바뀔 때마다 수정해주는 번거로움 제거함
+                        app_name을 지정해줌으로써 name이 같더라도 app별로 구분함
+-->
+
+<form action="{% url 'articles:create_review' %}" method="POST">
     {% csrf_token %}
     <label for="content">보낼 메세지</label>
     <input type="text" id="content" name="content" />
